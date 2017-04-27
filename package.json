@@ -1,0 +1,17 @@
+{
+  "name": "next-time",
+  "version": "1.0.0",
+  "description": "very minimal zeit themed clock",
+  "scripts": {
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^2.2.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
