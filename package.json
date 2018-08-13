@@ -4,7 +4,8 @@
   "description": "very minimal zeit themed clock",
   "scripts": {
     "build": "next build",
-    "start": "[ -n \"$NOW\" ] && next start || next"
+    "start": "next start",
+    "dev": "next"
   },
   "keywords": [],
   "author": "",

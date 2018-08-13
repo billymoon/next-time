@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import Head from 'next/head'
 
-const iPhone = process.browser && window.navigator.platform === 'iPhone'
-
 const ClockHand = ({ pathString, ...props }) =>
   <svg {...props} version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0, 0, 120, 103.924'>
     <g>
@@ -28,10 +26,8 @@ const Minute = ({ rotation }) =>
     <style>{`
      .clock svg.minute {
         transform: rotate(${rotation}deg);
-        ${!iPhone && `
         filter: drop-shadow( 0px 0px 12px #888 );
         -webkit-filter: drop-shadow( 0px 0px 12px #888 );
-        `}
       }
       .clock svg.minute path {
         fill: #fff;
@@ -92,15 +88,17 @@ export default class extends Component {
         <style>{`
           body {
             margin: 0px;
-            background: ${iPhone ? '#ddd' : '#fff'};
+            background: #fff;
           }
         `}</style>
         <Head>
+          <meta name='viewport' content='initial-scale=1,viewport-fit=cover' />
           <title>Next Time</title>
           <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <link rel='apple-touch-icon' href='/static/icon.png' />
         </Head>
-        <Clock iPhone={iPhone} hourRotation={hourRotation} minuteRotation={minuteRotation} />
+        <Clock hourRotation={hourRotation} minuteRotation={minuteRotation} />
       </div>
     )
   }
